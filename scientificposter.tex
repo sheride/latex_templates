@@ -112,21 +112,21 @@
 \definecolor{MSUTan}{RGB}{232,217,181}
 
 \definecolorstyle{MyStyle} {
-\definecolor{colorOne}{named}{black} % Primary color (block border background)
-\definecolor{colorTwo}{named}{white} % Block background color
-\definecolor{colorThree}{named}{white} % Poster background color
+    \definecolor{colorOne}{named}{black} % Primary color (block border background)
+    \definecolor{colorTwo}{named}{white} % Block background color
+    \definecolor{colorThree}{named}{white} % Poster background color
 }{ 
-% Background Colors
-\colorlet{backgroundcolor}{colorThree}
-\colorlet{framecolor}{colorOne}
-% Title Colors
-\colorlet{titlefgcolor}{black}
-\colorlet{titlebgcolor}{colorTwo}
-% Block Colors
-\colorlet{blocktitlebgcolor}{colorOne}
-\colorlet{blocktitlefgcolor}{white}
-\colorlet{blockbodybgcolor}{colorTwo}
-\colorlet{blockbodyfgcolor}{black}
+    % Background Colors
+    \colorlet{backgroundcolor}{colorThree}
+    \colorlet{framecolor}{colorOne}
+    % Title Colors
+    \colorlet{titlefgcolor}{black}
+    \colorlet{titlebgcolor}{colorTwo}
+    % Block Colors
+    \colorlet{blocktitlebgcolor}{colorOne}
+    \colorlet{blocktitlefgcolor}{white}
+    \colorlet{blockbodybgcolor}{colorTwo}
+    \colorlet{blockbodyfgcolor}{black}
 }
 
 \usecolorstyle{MyStyle} % Color Style
@@ -141,18 +141,18 @@
 
 \begin{columns} 
 
-\column{.33} % First column
+    \column{.33} % First column
 
-\block{\fontfamily{phv}\selectfont Title}{\centering Content}
+        \block{\fontfamily{phv}\selectfont Title}{\centering Content}
 
-\column{0.33} % Second column
+    \column{0.33} % Second column
 
-\block{\fontfamily{phv}\selectfont Title}{\centering Content}
+        \block{\fontfamily{phv}\selectfont Title}{\centering Content}
 
-\column{0.33} % Third column
+    \column{0.33} % Third column
 
-\block{\fontfamily{phv}\selectfont Title}{\centering Content}
+        \block{\fontfamily{phv}\selectfont Title}{\centering Content}
 
-\end{columns}
+    \end{columns}
 
 \end{document}
