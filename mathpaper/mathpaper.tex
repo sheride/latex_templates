@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[mathscr]{eucal}
+\usepackage{indentfirst}  % indent first paragraph after headers
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{fancyhdr}  % headers and footers
+\usepackage{authoraftertitle}  % making author, title variables available
+\usepackage{mathrsfs}
+\usepackage{siunitx}
+\usepackage{braket}  % bra-ket notation
+\usepackage{array}
+
+% Defining mathematical paper sections
+
+\numberwithin{equation}{section}
+
+\theoremstyle{plain}
+\newtheorem{Th}{Theorem}[section]
+\newtheorem{Cor}[Th]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{Def}[Th]{Definition}
+\newtheorem{Ex}[Th]{Example}
+\newtheorem{Rem}[Th]{Remark}
+
+\title{Title}  % Title appearing on title page and page headers
+\author{Elijah Sheridan} % Author appearing on title page
+
+\begin{document}
+
+% Title Page
+
+\begin{titlepage}
+	\centering
+	{\scshape\Large Project Name \par}  % Project name
+	\vspace{0.75cm}
+	{\scshape\Large Course Num \\Course Name \par}  % Course name and number
+	\vspace{1cm}
+	\includegraphics[width=0.3\textwidth]{example-image-a}\par\vspace{1cm}
+	{\scshape\LARGE \MyTitle \par}
+	\vspace{1.25cm}
+	{\Large\itshape \MyAuthor \par}
+	\vfill
+	supervised by\par
+	Professor~First \textsc{Last}  % Professor Name
+	\vfill
+	{\large \today\par}
+\end{titlepage}
+
+\pagestyle{fancy}
+\lhead{\MyTitle}  % Title number in header
+\rhead{\thepage}  % Page number in header
+
+% Table of Contents
+
+\tableofcontents
+
+\newpage
+
+% Paper contents
+
+\section{First Section}
+
+\subsection{First Subsection}
+
+This is a citation: \cite{test}.
+
+\begin{Th}[Example Theorem]
+This is a theorem.
+\end{Th}
+
+\begin{Cor}[Example Corollary]
+This is a corollary.
+\end{Cor}
+
+\begin{Def}[Example Definition]
+This is a definition.
+\end{Def}
+
+\begin{Ex}[Example Example]
+This is an example.
+\end{Ex}
+
+\begin{Rem}[Example Remark]
+This is a remark.
+\end{Rem}
+
+\newpage
+
+% Bibliography
+
+\bibliographystyle{plain}
+% if you don't want in-text citations:
+%\nocite{*} 
+\bibliography{ref.bib}
+
+\end{document}
