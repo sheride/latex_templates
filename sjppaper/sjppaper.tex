@@ -1,0 +1,63 @@
+\documentclass[jr]{sjp}
+\usepackage{graphicx} 
+\usepackage{amsmath,amssymb,subfigure}
+\usepackage{epsfig}
+\usepackage{lipsum} % added for sample text
+
+\setcounter{page}{1}
+\thispagestyle{empty}
+
+\begin{document}
+
+% Header
+
+\title{TITLE}
+\author[]{Elijah Sheridan$^1$ and Albert Einstein$^2$$^\ast$\footnote{$^\ast$ email@gmail.com}} %Keep on same line
+\address[]{$^1$Institution 1  \\
+$^2$Institution 2,\\ Second line \\} 
+
+\begin{abstract}
+\lipsum[10]
+\end{abstract}
+
+\maketitle
+
+% Body text
+
+\section{Introduction}
+\lipsum[1]
+
+\begin{figure}[h]
+ \begin{center}
+ \includegraphics[scale=.5]{example-image-a}
+\caption{Figure Caption}
+\end{center}
+\end{figure}
+
+\section{Section}
+\noindent \lipsum[2]
+\lipsum[3]
+
+\begin{equation}
+F(x)  = \Delta  y  \int_0^{H(x)}\rho g(H(x)  - z)  dz  = \frac{\rho  gH(x)^2}{2} \Delta y
+\end{equation}
+
+
+\section{Section 2}
+\lipsum[4]
+
+\section{Section 3}
+\lipsum[5]
+
+%Bibliography
+
+\begin{thebibliography}{99}
+\bibitem{halli94} Halliday D., Resnick R., and Walker J. 1994 \textit{
+Fundamentals of Physics}  (New Delhi: Asian Books Pvt. Ltd.) 
+\bibitem{pati} Supriya D Patil and S V Anekar, 2014, ``Effect of 
+Different Parameters and Storage Conditions on Liquid Jaggery Without 
+Adding Preservatives'', Intnl J of Res in Engg and Tech, \textbf{12}, 
+280 - 283
+\end{thebibliography}
+
+\end{document}
