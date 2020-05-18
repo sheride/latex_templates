@@ -1,0 +1,111 @@
+\documentclass[]{beamer} % use setting 'handouts' to ignore overlay specifications, 'draft' to 
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid} % beamer theme, can change
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{ifluatex}
+
+% example colors
+\definecolor{vandy_gold}{RGB}{204, 161, 102}
+\definecolor{vandy_blue}{RGB}{18, 111, 150}
+\definecolor{vandy_red}{RGB}{153, 61, 27}
+\definecolor{vandy_gray}{RGB}{51, 51, 51}
+\definecolor{vandy_green}{RGB}{70, 78, 33}
+
+% example beamer color settings
+\setbeamercolor{section in toc}{fg=vandy_gold,bg=white}
+\setbeamercolor{alerted text}{fg=vandy_red}
+\setbeamercolor*{palette primary}{fg=white,bg=black}
+\setbeamercolor*{palette secondary}{fg=white,bg=vandy_gold}
+\setbeamercolor*{palette tertiary}{fg=white,bg=black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=vandy_gold}
+\setbeamercolor*{sidebar}{fg=white,bg=black}
+\setbeamercolor*{palette sidebar primary}{fg=white}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{fg=white}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+\setbeamercolor{titlelike}{parent=palette secondary}
+\setbeamercolor{frametitle}{fg=white,bg=vandy_gold}
+\setbeamercolor{frametitle right}{fg=white,bg=vandy_gold}
+\setbeamercolor{section number projected}{bg=black,fg=vandy_gold}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{block title}{fg=white, bg=vandy_gray!50!white}
+\setbeamercolor{block body}{bg=vandy_gray!20!white}
+
+% example beamer format settings
+\setbeamertemplate{itemize item}{\color{black}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{black}$\bullet$}
+\setbeamerfont{block title}{size=\small}
+\setbeamerfont{block body}{size=\tiny}
+\setbeamertemplate{itemize/enumerate body begin}{\tiny}
+\setbeamertemplate{itemize/enumerate subbody begin}{\tiny}
+\AtBeginEnvironment{tabular}{\tiny}
+\tikzset{font=\tiny}
+% \includeonlyframes{current} % if you want to just compile certain slides: use [current] setting on a frame to make it 'current'
+
+% title slide information
+\title[Short Name]{Full Name for Presentation}
+\author[E. Sheridan]{\textbf{E. Sheridan}\inst{1}}
+\institute{Vanderbilt University\inst{1}}
+
+% useful commands:
+
+% \uncover<+->{} takes overlay specifications and reveals contents accordingly
+% \scalebox{x}{} scales contents by a factor of x
+
+% document
+\begin{document}
+
+% title page
+\frame{\titlepage}
+
+% table of contents
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% example section
+\section{Section 1}
+
+% example frame 1
+\begin{frame}{Example Frame}
+    \begin{block}{Block Title}
+        This block appears immediately
+    \end{block}
+    \begin{block}{Block Title}<1->
+        This block appears on the second overlay and all following ones 
+    \end{block}
+\end{frame}
+
+% example frame 2
+\begin{frame}{Another Example Frame}
+    \begin{block}{Block Title}<+->
+        This block appears immediately
+    \end{block}
+    \begin{block}{Block Title}<+->
+        This block appears next
+    \end{block}
+\end{frame}
+
+% example section
+\section{Section 2}
+
+% example frame 3
+\begin{frame}{Yet Another Example Frame}
+    \begin{columns}
+        \begin{column}{0.4\linewidth}
+            \begin{block}{Block Title}<+(1)->
+                This block appears almost immediately
+            \end{block}
+        \end{column}
+        \begin{column}{0.4\linewidth}
+            \begin{block}{Block Title}<+->
+                This block appears next
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}

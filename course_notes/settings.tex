@@ -1,0 +1,273 @@
+% PACKAGES
+
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=1.5in]{geometry}
+\usepackage[english]{babel}
+\usepackage{amsfonts, amsmath, amscd, amsmath, amsthm, amssymb}
+\usepackage[mathscr]{eucal}
+\usepackage{indentfirst} % indent first paragraph after headers
+\usepackage{graphics, graphicx}
+\usepackage{fancyhdr}  % headers and footers
+%\usepackage{mathrsfs}
+\usepackage{braket}  % bra-ket notation
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
+% COMMANDS
+
+\newcommand*\bell{\ensuremath{\boldsymbol\ell}}
+
+\newcommand{\e}{\text{e}}
+\renewcommand{\t}[1]{\text{#1}}
+\renewcommand{\it}[1]{\textit{#1}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\v}[1]{\mathbf{#1}}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\st}{\textnormal{ such that }}
+\newcommand{\for}{\textnormal{ for }}
+\newcommand{\where}{\textnormal{ where }}
+\newcommand{\by}{\textnormal{ by }}
+\newcommand{\with}{\textnormal{ with }}
+\newcommand{\ie}{\textnormal{ i.e. }}
+
+\newcommand{\Rb}{\mathbb{R}}
+\newcommand{\Rtb}{\mathbb{R}^3}
+\newcommand{\Zb}{\mathbb{Z}}
+\newcommand{\Nb}{\mathbb{N}}
+\newcommand{\Qb}{\mathbb{Q}}
+\newcommand{\Cb}{\mathbb{C}}
+\newcommand{\Mb}{\mathbb{M}}
+
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\Pc}{\mathcal{P}}
+\newcommand{\Rc}{\mathcal{R}}
+\newcommand{\Tc}{\mathcal{T}}
+\newcommand{\Uc}{\mathcal{U}}
+
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\renewcommand{\max}{\text{max}}
+\renewcommand{\min}{\text{min}}
+
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+
+\newcommand{\zeroton}{_{i=0}^n}
+\newcommand{\zerotoi}{_{j=0}^i}
+\newcommand{\oneton}{_{i=1}^n}
+\newcommand{\zerotoinfty}{_{n=0}^{\infty}}
+\newcommand{\onetoinfty}{ _{n=1} ^{\infty}}
+
+\definecolor{gentlered}{HTML}{E76F64}
+\newcommand{\vocab}[1]{\textbf{\color{gentlered} #1}}
+
+% THEOREMS, ETC.: inspiration/format/basic syntax cite Evan Chen @ https://github.com/vEnhance/dotfiles/blob/master/texmf/tex/latex/evan/evan.sty
+
+% MORAL
+\newenvironment{moral}{%
+	\begin{mdframed}[linecolor=gentlered]%
+	\bfseries\color{gentlered}}%
+	{\end{mdframed}
+}
+
+% DEFINITION
+\definecolor{creme}{HTML}{F2D6B4}
+\mdfdefinestyle{cremetab}{%
+	skipabove=4pt,
+	skipbelow=4pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=creme!60!Black,
+	backgroundcolor=creme!20,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{creme!60!Black},
+	bodyfont=\normalfont,
+	spaceabove=0.5pt,
+	spacebelow=0.5pt,
+	mdframed={style=cremetab},
+	headpunct={ --- },
+]{definition}
+
+% DEFINITION 2
+\mdfdefinestyle{cremerbox}{%
+	roundcorner =10pt,
+	linewidth=1pt,
+	innerbottommargin=9pt,
+	linecolor=creme!60!Black,
+	nobreak=true,
+	backgroundcolor=creme!20,
+	skipabove=4pt,
+	skipbelow=4pt,
+}
+\declaretheoremstyle[
+	headfont=\sffamily\bfseries\color{creme!60!Black},
+	mdframed={style=cremerbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt}
+]{definition2}
+
+% RESULT
+\definecolor{softgreen}{HTML}{A9CBB8}
+\mdfdefinestyle{greenrbox}{%
+	roundcorner =10pt,
+	linewidth=1pt,
+	skipabove=4pt,
+	skipbelow=4pt,
+	innerbottommargin=9pt,
+	linecolor=softgreen!80!black,
+	nobreak=true,
+	backgroundcolor=softgreen!10,
+}
+\declaretheoremstyle[
+	headfont=\sffamily\bfseries\color{softgreen!80!black},
+	mdframed={style=greenrbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt}
+]{result}
+
+% THEOREM
+\definecolor{fgblue}{HTML}{7696BA}
+\definecolor{bgblue}{HTML}{9DC6DD}
+\mdfdefinestyle{bluetab}{%
+	skipabove=4pt,
+	skipbelow=4pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=fgblue,
+	backgroundcolor=bgblue!12,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{fgblue},
+	bodyfont=\normalfont,
+	spaceabove=0.5pt,
+	spacebelow=0.5pt,
+	mdframed={style=bluetab},
+	headpunct={ --- },
+]{theorem}
+
+% COROLLARY
+\definecolor{nicegray}{HTML}{B5B7AE}
+\mdfdefinestyle{graytab}{%
+	skipabove=4pt,
+	skipbelow=4pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=nicegray!90!black,
+	backgroundcolor=nicegray!10,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{nicegray!90!black},
+	bodyfont=\normalfont,
+	spaceabove=0.5pt,
+	spacebelow=0.5pt,
+	mdframed={style=graytab},
+	headpunct={ --- },
+]{corollary}
+
+% LEMMA
+\definecolor{nicepink}{HTML}{FADADD}
+\mdfdefinestyle{pinktab}{%
+	skipabove=4pt,
+	skipbelow=4pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=nicepink!80!black,
+	backgroundcolor=nicepink!25,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{nicepink!80!black},
+	bodyfont=\normalfont,
+	spaceabove=0.5pt,
+	spacebelow=0.5pt,
+	mdframed={style=pinktab},
+	headpunct={ --- },
+]{lemma}
+
+% EXAMPLE
+\definecolor{niceorange}{HTML}{EA9977}
+\mdfdefinestyle{orangebox}{%
+	linewidth=0.5pt,
+	skipabove=4pt,
+	skipbelow=4pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	backgroundcolor=niceorange!5,
+	linecolor=niceorange!85!black,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\color{niceorange!85!black},
+	mdframed={style=orangebox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt},
+]{example}
+
+% HW
+\mdfdefinestyle{blackbox}{%
+	linewidth=0.5pt,
+	skipabove=4pt,
+	skipbelow=4pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	backgroundcolor=white,
+	linecolor=black,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\color{black},
+	mdframed={style=blackbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt},
+]{homework}
+
+\declaretheorem[style=definition2, name=Definition, numberwithin=subsection]{define}
+\declaretheorem[style=result, name=Result, sibling=define]{res}
+\declaretheorem[style=theorem, name=Theorem, sibling=define]{theo}
+\declaretheorem[style=corollary, name=Corollary, sibling=define]{cor}
+\declaretheorem[style=example, name=Example, sibling=define]{ex}
+\declaretheorem[style=homework, name=Homework, sibling=define]{hw}
+\declaretheorem[style=lemma, name=Lemma, sibling=define]{lem}
+
+\Crefname{define}{Def.}{Defs.}
+\Crefname{res}{Res.}{Res.}
+\Crefname{theo}{Thm.}{Thms.}
+\Crefname{cor}{Cor.}{Cors.}
+\Crefname{ex}{Ex.}{Exs.}
